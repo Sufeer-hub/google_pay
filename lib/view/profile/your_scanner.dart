@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_pay/constants/color_constants/color_constants.dart';
+
 import 'package:google_pay/view/profile/profile_sceen.dart';
 
 class YourScanner extends StatelessWidget {

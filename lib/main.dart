@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_pay/view/home/home_screen.dart';
 import 'package:google_pay/view/profile/language.dart';
+import 'package:google_pay/view/profile/payment_methods.dart';
 import 'package:google_pay/view/profile/profile_sceen.dart';
 import 'package:google_pay/view/profile/settings_screen.dart';
 import 'package:google_pay/view/profile/your_scanner.dart';
@@ -16,6 +17,6 @@ class GooglePaySignUpApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ProfileSceen());
   }
 }

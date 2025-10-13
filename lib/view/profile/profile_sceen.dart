@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_pay/global_widgets/globalisttile.dart';
 import 'package:google_pay/view/profile/language.dart';
+import 'package:google_pay/view/profile/payment_methods.dart';
 import 'package:google_pay/view/profile/settings_screen.dart';
 import 'package:google_pay/view/profile/your_scanner.dart';
 
@@ -16,7 +17,8 @@ class _ProfileSceenState extends State<ProfileSceen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        toolbarHeight: 30,
+
         actions: [
           PopupMenuButton(
             icon: Icon(Icons.more_vert),
@@ -216,7 +218,14 @@ class _ProfileSceenState extends State<ProfileSceen> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PaymentMethods(),
+                                    ),
+                                  );
+                                },
                                 icon: Icon(Icons.arrow_forward_ios, size: 13),
                               ),
                             ],
@@ -224,35 +233,55 @@ class _ProfileSceenState extends State<ProfileSceen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                width: 79,
-                                height: 90,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PaymentMethods(),
+                                    ),
+                                  );
+                                },
+                                splashColor: Colors.grey,
 
-                                child: Column(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.account_balance,
-                                        color: Color(0xff005EBC),
+                                child: Container(
+                                  width: 79,
+                                  height: 90,
+
+                                  child: Column(
+                                    children: [
+                                      IconButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PaymentMethods(),
+                                            ),
+                                          );
+                                        },
+                                        icon: Icon(
+                                          Icons.account_balance,
+                                          color: Color(0xff005EBC),
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      "Bank account",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
+                                      Text(
+                                        "Bank account",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      "1 account",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color(0xff979797),
+                                      Text(
+                                        "1 account",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xff979797),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               Container(

@@ -9,15 +9,7 @@ class Language extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(
-              context,
-              MaterialPageRoute(builder: (context) => ProfileSceen()),
-            );
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
+        // leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
         title: Text("Selected Language"),
         actions: [
           PopupMenuButton(
