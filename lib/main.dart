@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_pay/view/home/home_screen.dart';
+import 'package:google_pay/view/profile/language.dart';
+import 'package:google_pay/view/profile/profile_sceen.dart';
+import 'package:google_pay/view/profile/settings_screen.dart';
+import 'package:google_pay/view/profile/your_scanner.dart';
 import 'package:google_pay/view/splash/splash_screen.dart';
 
 void main() {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_pay/global_widgets/globalcircleavatar.dart';
 import 'package:google_pay/global_widgets/globalcontainer.dart';
+import 'package:google_pay/view/profile/profile_sceen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -40,10 +41,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(width: 10),
-                  CircleAvatar(
-                    radius: 17.5,
-                    backgroundColor: const Color.fromARGB(255, 55, 84, 56),
-                    child: Text("M", style: TextStyle(color: Colors.white)),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProfileSceen()),
+                      );
+                    },
+                    child: CircleAvatar(
+                      radius: 17.5,
+                      backgroundColor: const Color.fromARGB(255, 55, 84, 56),
+                      child: Text("M", style: TextStyle(color: Colors.white)),
+                    ),
                   ),
                 ],
               ),
