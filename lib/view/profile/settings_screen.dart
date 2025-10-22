@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_pay/global_widgets/globalisttile.dart';
 import 'package:google_pay/view/profile/profile_sceen.dart';
 
+import 'package:google_pay/view/sign_up/sign_up_screen1.dart';
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -57,7 +59,49 @@ class SettingsScreen extends StatelessWidget {
             title: "Help & feedback ",
           ),
           CustomListTile(leadingIcon: Icons.lock_outline, title: "Lock app "),
-          CustomListTile(leadingIcon: Icons.logout, title: "Sign out "),
+          InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text("Do you want to sign out of your account?"),
+                    content: Text(
+                      "You'll have to re-activate your UPI accounts when you relaunch the app",
+                    ),
+                    actions: [
+                      TextButton(
+                        child: Text("Cancel"),
+                        onPressed: () {
+                          Navigator.of(context).pop(); // Dismiss the dialog
+                        },
+                      ),
+                      TextButton(
+                        child: Text(
+                          "Sign Out",
+                          //style: TextStyle(color: Colors.red),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop(); // Close the dialog
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  SignUpScreen1(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: CustomListTile(
+              leadingIcon: Icons.power_settings_new,
+              title: "Sign out",
+            ),
+          ),
         ],
       ),
     );

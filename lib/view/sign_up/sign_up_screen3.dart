@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_pay/view/bottom%20navigation/bottom_nav.dart';
 import 'package:google_pay/view/home/home_screen.dart';
 
 class SignUpScreen3 extends StatefulWidget {
@@ -98,7 +99,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    MaterialPageRoute(builder: (context) => BottomNavExample()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

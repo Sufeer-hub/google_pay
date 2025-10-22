@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_pay/constants/color_constants/color_constants.dart';
+import 'package:google_pay/global_widgets/globalcard.dart';
 import 'package:google_pay/global_widgets/globalcircleavatar.dart';
 import 'package:google_pay/global_widgets/globalcontainer.dart';
+import 'package:google_pay/global_widgets/globalisttile.dart';
+import 'package:google_pay/view/home/electricity.dart';
+import 'package:google_pay/view/home/trasaction_history.dart';
+
 import 'package:google_pay/view/profile/profile_sceen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.backgroundcolor,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -59,6 +66,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
+                Card(),
+                Container(
+                  width: double.infinity,
+
+                  // height: 200,
+                ),
                 SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,12 +107,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 SizedBox(height: 25),
-                Padding(
-                  padding: const EdgeInsets.only(right: 300),
-                  child: Text(
-                    "People",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      "People",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 25),
 
@@ -166,12 +183,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(height: 25),
-                Padding(
-                  padding: const EdgeInsets.only(right: 225),
-                  child: Text(
-                    "Bills & recharges",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      "Bills & recharges",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 25),
                 Row(
@@ -199,19 +220,56 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                Avatarwithimage(
-                  url:
-                      "https://img.freepik.com/premium-vector/electric-bulb-logo-icon-vector-design-template_878729-32.jpg?w=2000",
-                  label: "Electricity",
+                SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Avatarwithicon(
+                      label: "Mobile \nrecharge",
+                      backgroundColor: Color(0xffCFE4FF),
+                      url: Icons.mobile_off,
+                    ),
+                    Avatarwithicon(
+                      label: "DTH/Cable \nTV",
+                      backgroundColor: Color(0xffCFE4FF),
+                      url: Icons.tv,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Electricity(),
+                          ),
+                        );
+                      },
+                      child: Avatarwithicon(
+                        label: "Electricity \n",
+                        backgroundColor: Color(0xffCFE4FF),
+                        url: Icons.lightbulb_outline,
+                      ),
+                    ),
+                    Avatarwithicon(
+                      label: "Loan EMI \n",
+                      backgroundColor: Color(0xffCFE4FF),
+                      url: Icons.currency_rupee,
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 30),
+                Row(
+                  children: [
+                    Text(
+                      "Business",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 25),
-                Padding(
-                  padding: const EdgeInsets.only(right: 280),
-                  child: Text(
-                    "Business",
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
-                  ),
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -233,6 +291,153 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ],
+                ),
+                SizedBox(height: 25),
+                Row(
+                  children: [
+                    Text(
+                      "Gift cards & more",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomCard(
+                      icon: Icons.subscriptions_outlined,
+                      title: "Subscriptions",
+                      subtitle: "Buy plans from leading OTT platforms",
+                      onTap: () {},
+                    ),
+                    CustomCard(
+                      icon: Icons.card_giftcard,
+                      title: "Gift cards",
+                      subtitle: "Get 30% cashback on Amazon Prime",
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 25),
+                Row(
+                  children: [
+                    Text(
+                      "Offers & rewards",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Avatarwithimage(
+                      url:
+                          "https://webapp.gameloop.com/detailpic/39a344a5-10e7-466d-8126-a75e40b51b98.webp",
+                      label: "Rewards",
+                    ),
+                    Avatarwithimage(
+                      url:
+                          "https://tse1.mm.bing.net/th/id/OIP.M5mWBWc3LDdoADwmulqirwHaIG?pid=Api&P=0&h=180",
+                      label: "Offers",
+                    ),
+                    Avatarwithimage(
+                      url:
+                          "https://tse1.mm.bing.net/th/id/OIP.NZKq5Tljvcx45-8R75eUgQHaE8?pid=Api&P=0&h=180",
+                      label: "Referrals",
+                    ),
+                    Avatarwithimage(
+                      url:
+                          "https://static.vecteezy.com/system/resources/previews/016/249/152/original/check-mark-icon-checkmark-right-symbol-tick-sign-ok-button-correct-circle-flat-style-illustration-isolated-on-white-background-eps-10-vector.jpg",
+                      label: "Tick Squad",
+                    ),
+                  ],
+                ),
+                SizedBox(height: 25),
+                Row(
+                  children: [
+                    Text(
+                      "Manage your money",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomCard(
+                      icon: Icons.receipt_long_rounded,
+                      title: "Personal Loan",
+                      subtitle: "Up to \u20B910 lakh, instant approval",
+                      onTap: () {},
+                    ),
+                    CustomCard(
+                      icon: Icons.water_drop_outlined,
+                      title: "Gold Loan",
+                      subtitle: "Interest rate starting at 0.96% monthly",
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TrasactionHistory(),
+                      ),
+                    );
+                  },
+                  child: CustomListTile(
+                    leadingIcon: Icons.speed,
+                    title: "Check your CIBIL score for free",
+                    trailing: Icon(Icons.chevron_right),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TrasactionHistory(),
+                      ),
+                    );
+                  },
+                  child: CustomListTile(
+                    leadingIcon: Icons.history,
+                    title: "See trasacion history",
+                    trailing: Icon(Icons.chevron_right),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TrasactionHistory(),
+                      ),
+                    );
+                  },
+                  child: CustomListTile(
+                    leadingIcon: Icons.account_balance,
+                    title: "Check bank balance",
+                    trailing: Icon(Icons.chevron_right),
+                  ),
                 ),
               ],
             ),

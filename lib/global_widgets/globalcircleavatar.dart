@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_pay/constants/color_constants/color_constants.dart';
 
 /// A reusable widget showing a circular avatar with a label below it.
 class AvatarWithLabel extends StatelessWidget {
@@ -15,7 +14,7 @@ class AvatarWithLabel extends StatelessWidget {
     super.key,
     required this.initial,
     required this.label,
-    this.radius = 22.5,
+    this.radius = 24,
     this.backgroundColor = Colors.blue,
     this.initialStyle,
     this.labelStyle,
@@ -76,7 +75,7 @@ class Avatarwithimage extends StatelessWidget {
     this.initialStyle,
     this.labelStyle,
     this.onTap,
-    this.radius = 22.5,
+    this.radius = 24,
   });
 
   @override
@@ -96,6 +95,50 @@ class Avatarwithimage extends StatelessWidget {
         ],
       ),
     );
-    ;
+  }
+}
+
+class Avatarwithicon extends StatelessWidget {
+  final IconData url;
+  final String label;
+  final double radius;
+  final Color backgroundColor;
+  final TextStyle? initialStyle;
+  final TextStyle? labelStyle;
+  final VoidCallback? onTap;
+  const Avatarwithicon({
+    super.key,
+
+    required this.label,
+
+    required this.backgroundColor,
+    this.initialStyle,
+    this.labelStyle,
+    this.onTap,
+    this.radius = 22.5,
+    required this.url,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CircleAvatar(
+            radius: radius,
+            backgroundColor: backgroundColor,
+            child: Icon(url),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            label,
+            textAlign: TextAlign.center,
+            style: labelStyle ?? const TextStyle(fontSize: 16),
+          ),
+        ],
+      ),
+    );
   }
 }

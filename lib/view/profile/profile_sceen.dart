@@ -362,10 +362,18 @@ class _ProfileSceenState extends State<ProfileSceen> {
                       style: TextStyle(color: Color(0xff005EBC)),
                     ),
                   ),
-                  CustomListTile(
-                    leadingIcon: Icons.qr_code,
-                    title: "Your QR code",
-                    subtitle: "Use to receive money",
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => YourScanner()),
+                      );
+                    },
+                    child: CustomListTile(
+                      leadingIcon: Icons.qr_code,
+                      title: "Your QR code",
+                      subtitle: "Use to receive money",
+                    ),
                   ),
                   CustomListTile(
                     leadingIcon: Icons.favorite_border,
