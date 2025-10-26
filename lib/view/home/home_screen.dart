@@ -4,7 +4,14 @@ import 'package:google_pay/global_widgets/globalcard.dart';
 import 'package:google_pay/global_widgets/globalcircleavatar.dart';
 import 'package:google_pay/global_widgets/globalcontainer.dart';
 import 'package:google_pay/global_widgets/globalisttile.dart';
+import 'package:google_pay/test.dart';
+import 'package:google_pay/view/home/bank%20transfer/bank_transfer_others.dart';
 import 'package:google_pay/view/home/electricity.dart';
+import 'package:google_pay/view/home/mobile_recharge.dart';
+import 'package:google_pay/view/home/pay_anyone.dart';
+import 'package:google_pay/view/home/qr_code_scanning.dart';
+import 'package:google_pay/view/home/scanning_screen.dart';
+import 'package:google_pay/view/home/search_screen.dart';
 import 'package:google_pay/view/home/trasaction_history.dart';
 
 import 'package:google_pay/view/profile/profile_sceen.dart';
@@ -34,15 +41,31 @@ class _HomeScreenState extends State<HomeScreen> {
                         elevation: 8,
                         shadowColor: Colors.grey.shade50,
                         borderRadius: BorderRadius.circular(30),
-                        child: TextField(
-                          onChanged: (value) {},
-                          decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.search, color: Colors.black),
-                            hintText: "Pay by name or phone number",
-                            hintStyle: TextStyle(fontSize: 14),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(30),
+                        child: SizedBox(
+                          height: 40,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SearchScreen(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.search, color: Colors.black87),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      "Pay by name or phone number",
+                                      style: TextStyle(color: Colors.black54),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -76,33 +99,71 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconTextButton(
-                      icon: Icons.qr_code_scanner,
-                      iconColor: Color(0xff094ca9),
-                      iconSize: 25,
-                      label: "Scan any \nQR code",
-                      backgroundColor: Color(0xffcfe4ff),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => QRViewExample(),
+                          ),
+                        );
+                      },
+                      child: IconTextButton(
+                        icon: Icons.qr_code_scanner,
+                        iconColor: Color(0xff094ca9),
+                        iconSize: 25,
+                        label: "Scan any \nQR code",
+                        backgroundColor: Color(0xffcfe4ff),
+                      ),
                     ),
-                    IconTextButton(
-                      icon: Icons.currency_rupee,
-                      iconColor: Color(0xff094ca9),
-                      iconSize: 25,
-                      label: "Pay \nanyone",
-                      backgroundColor: Color(0xffcfe4ff),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PayAnyone()),
+                        );
+                      },
+                      child: IconTextButton(
+                        icon: Icons.currency_rupee,
+                        iconColor: Color(0xff094ca9),
+                        iconSize: 25,
+                        label: "Pay \nanyone",
+                        backgroundColor: Color(0xffcfe4ff),
+                      ),
                     ),
-                    IconTextButton(
-                      icon: Icons.account_balance,
-                      iconColor: Color(0xff094ca9),
-                      iconSize: 25,
-                      label: "Bank \ntransfer",
-                      backgroundColor: Color(0xffcfe4ff),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BankTransfer(),
+                          ),
+                        );
+                      },
+                      child: IconTextButton(
+                        icon: Icons.account_balance,
+                        iconColor: Color(0xff094ca9),
+                        iconSize: 25,
+                        label: "Bank \ntransfer",
+                        backgroundColor: Color(0xffcfe4ff),
+                      ),
                     ),
-                    IconTextButton(
-                      icon: Icons.mobile_screen_share,
-                      iconColor: Color(0xff094ca9),
-                      iconSize: 25,
-                      label: "Mobile \nrecharge",
-                      backgroundColor: Color(0xffcfe4ff),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MobileRecharge(),
+                          ),
+                        );
+                      },
+                      child: IconTextButton(
+                        icon: Icons.mobile_screen_share,
+                        iconColor: Color(0xff094ca9),
+                        iconSize: 25,
+                        label: "Mobile \nrecharge",
+                        backgroundColor: Color(0xffcfe4ff),
+                      ),
                     ),
                   ],
                 ),
@@ -224,10 +285,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Avatarwithicon(
-                      label: "Mobile \nrecharge",
-                      backgroundColor: Color(0xffCFE4FF),
-                      url: Icons.mobile_off,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MobileRecharge(),
+                          ),
+                        );
+                      },
+                      child: Avatarwithicon(
+                        label: "Mobile \nrecharge",
+                        backgroundColor: Color(0xffCFE4FF),
+                        url: Icons.mobile_off,
+                      ),
                     ),
                     Avatarwithicon(
                       label: "DTH/Cable \nTV",
@@ -307,12 +378,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 20),
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CustomCard(
                       icon: Icons.subscriptions_outlined,
                       title: "Subscriptions",
-                      subtitle: "Buy plans from leading OTT platforms",
+                      subtitle: "Buy plans from OTT platforms",
                       onTap: () {},
                     ),
                     CustomCard(
@@ -377,7 +448,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 20),
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CustomCard(
                       icon: Icons.receipt_long_rounded,

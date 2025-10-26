@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_pay/constants/color_constants/color_constants.dart';
 
 class CustomCard extends StatelessWidget {
   final IconData icon;

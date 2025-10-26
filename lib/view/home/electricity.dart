@@ -151,7 +151,12 @@ class _ElectricityState extends State<Electricity> {
     return Scaffold(
       backgroundColor: ColorConstants.backgroundcolor,
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         title: SizedBox(
           height: 45,
           child: TextField(
