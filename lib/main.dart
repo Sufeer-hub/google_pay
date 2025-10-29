@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_pay/global_widgets/global_dateTime.dart';
 import 'package:google_pay/test.dart';
 import 'package:google_pay/view/bottom%20navigation/bottom_nav.dart';
 import 'package:google_pay/view/home/bank%20transfer/bank_transfer_others.dart';
@@ -11,7 +12,9 @@ import 'package:google_pay/view/home/payments/payment_successfull.dart';
 import 'package:google_pay/view/home/payments/upi_pin.dart';
 import 'package:google_pay/view/home/qr_code_scanning.dart';
 import 'package:google_pay/view/home/search_screen.dart';
-import 'package:google_pay/view/home/trasaction_history.dart';
+import 'package:google_pay/view/home/transaction/bank_balance.dart';
+import 'package:google_pay/view/home/transaction/check_balance.dart';
+import 'package:google_pay/view/home/transaction/trasaction_history.dart';
 import 'package:google_pay/view/profile/language.dart';
 import 'package:google_pay/view/profile/payment_methods.dart';
 import 'package:google_pay/view/profile/profile_sceen.dart';
@@ -28,9 +31,6 @@ class GooglePaySignUpApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BottomNavExample(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: CheckBalance());
   }
 }

@@ -12,7 +12,7 @@ import 'package:google_pay/view/home/pay_anyone.dart';
 import 'package:google_pay/view/home/qr_code_scanning.dart';
 import 'package:google_pay/view/home/scanning_screen.dart';
 import 'package:google_pay/view/home/search_screen.dart';
-import 'package:google_pay/view/home/trasaction_history.dart';
+import 'package:google_pay/view/home/transaction/trasaction_history.dart';
 
 import 'package:google_pay/view/profile/profile_sceen.dart';
 
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         shadowColor: Colors.grey.shade50,
                         borderRadius: BorderRadius.circular(30),
                         child: SizedBox(
-                          height: 40,
+                          height: 50,
                           child: InkWell(
                             onTap: () {
                               Navigator.push(
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             child: Container(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Row(
                                   children: [
                                     Icon(Icons.search, color: Colors.black87),

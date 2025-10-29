@@ -68,7 +68,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_pay/view/home/home_screen.dart';
-import 'package:google_pay/view/home/trasaction_history.dart';
+import 'package:google_pay/view/home/transaction/trasaction_history.dart';
 import 'package:google_pay/view/profile/profile_sceen.dart';
 
 class BottomNavExample extends StatefulWidget {

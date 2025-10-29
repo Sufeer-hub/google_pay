@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/view/home/payments/upi_pin.dart';
+import 'package:google_pay/view/home/qr_code_scanning.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -25,7 +26,15 @@ class _PaymentScreenState extends State<PaymentScreen> {
       ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading: Icon(Icons.clear),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => QRViewExample()),
+            );
+          },
+          icon: Icon(Icons.clear),
+        ),
         actions: [
           Icon(Icons.error_outline),
           SizedBox(width: 20),

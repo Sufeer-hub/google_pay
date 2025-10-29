@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/global_widgets/globalcard.dart';
 import 'package:google_pay/global_widgets/globallisttile2.dart';
+import 'package:google_pay/view/home/transaction/check_balance.dart';
 
 class TrasactionHistory extends StatefulWidget {
   const TrasactionHistory({super.key});
@@ -43,18 +44,26 @@ class _TrasactionHistoryState extends State<TrasactionHistory> {
                 ],
               ),
               SizedBox(height: 25),
-              CustomListTile2(
-                container: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    "https://tse4.mm.bing.net/th/id/OIP.iTMEf79F5D0_I8WeiUjzqwHaEK?pid=Api&P=0&h=180",
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CheckBalance()),
+                  );
+                },
+                child: CustomListTile2(
+                  container: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      "https://tse4.mm.bing.net/th/id/OIP.iTMEf79F5D0_I8WeiUjzqwHaEK?pid=Api&P=0&h=180",
+                    ),
                   ),
-                ),
-                title: "SBI Bank ****9539",
-                subtitle: "Savings account",
-                color: Colors.black,
-                trailing: Text(
-                  "Check balance",
-                  style: TextStyle(color: ColorConstants.blue, fontSize: 14),
+                  title: "SBI Bank ****9539",
+                  subtitle: "Savings account",
+                  color: Colors.black,
+                  trailing: Text(
+                    "Check balance",
+                    style: TextStyle(color: ColorConstants.blue, fontSize: 14),
+                  ),
                 ),
               ),
               CustomListTile2(
@@ -82,7 +91,7 @@ class _TrasactionHistoryState extends State<TrasactionHistory> {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CustomCard(
                       icon: Icons.receipt_long_rounded,

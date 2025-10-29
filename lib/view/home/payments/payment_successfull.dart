@@ -1,6 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_pay/constants/color_constants/color_constants.dart';
+import 'package:google_pay/global_widgets/global_dateTime.dart';
+import 'package:google_pay/view/home/qr_code_scanning.dart';
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 
 class PaymentSuccessfull extends StatefulWidget {
@@ -74,9 +77,8 @@ class PaymentDetailsPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 220),
             const Center(
               child: CircleAvatar(
                 backgroundColor: Color(0xff006FFd),
@@ -99,31 +101,63 @@ class PaymentDetailsPage extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
+            Container(height: 50, child: Clockkk()),
+            SizedBox(height: 380),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: [
+                Container(
+                  height: 35,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(Icons.share, color: Color(0xff0059D7), size: 20),
+                        Text(
+                          "Share ",
+                          style: TextStyle(color: Color(0xff0059D7)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => QRViewExample()),
+                    );
+                  },
+                  child: Container(
+                    height: 35,
+                    width: 140,
+                    decoration: BoxDecoration(
+                      color: Color(0xff0059D7),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text("Done", style: TextStyle(color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildDetailRow(String title, String value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(fontSize: 15, color: Colors.black54),
-          ),
-          Text(
-            value,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Colors.black87,
-            ),
-          ),
-        ],
       ),
     );
   }

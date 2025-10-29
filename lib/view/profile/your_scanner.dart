@@ -93,7 +93,7 @@ class YourScanner extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 200),
+            SizedBox(height: 300),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
