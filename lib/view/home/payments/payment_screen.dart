@@ -11,18 +11,20 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  final TextEditingController _controller = TextEditingController(text: "₹ ");
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: ColorConstants.backgroundblue,
+        backgroundColor: ColorConstants.bluelight,
         onPressed: () {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => UpiPinScreen()),
           );
         },
-        child: Icon(Icons.arrow_forward),
+        child: Icon(Icons.arrow_forward, color: Colors.white),
       ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -73,24 +75,33 @@ class _PaymentScreenState extends State<PaymentScreen> {
           SizedBox(height: 15),
           Text("+91 8943200240"),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 160),
-              Text("\u20B9 ", style: TextStyle(fontSize: 35)),
+              //1000 const Text("₹", style: TextStyle(fontSize: 36)),
               SizedBox(
-                width: 170,
+                width: size.width * 0.5,
                 child: TextField(
-                  style: TextStyle(fontSize: 50),
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    // prefixText: "\u20B9",
-                    prefixStyle: TextStyle(fontSize: 45),
-                    hint: Text("0", style: TextStyle(fontSize: 50)),
-                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                  controller: _controller,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 35, color: Colors.black),
+                  decoration: const InputDecoration(border: InputBorder.none),
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
                   ),
+                  onChanged: (value) {
+                    // Always ensure it starts with the ₹ symbol
+                    if (!value.startsWith('₹ ')) {
+                      _controller.text = '₹ ';
+                      _controller.selection = TextSelection.fromPosition(
+                        TextPosition(offset: _controller.text.length),
+                      );
+                    }
+                  },
                 ),
               ),
             ],
           ),
+
           Container(
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 239, 243, 245),

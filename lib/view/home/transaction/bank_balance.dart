@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/global_widgets/globallisttile2.dart';
+import 'package:google_pay/view/home/transaction/trasaction_history.dart';
 
 class BankBalance extends StatefulWidget {
   const BankBalance({super.key});
@@ -18,7 +19,10 @@ class _BankBalanceState extends State<BankBalance> {
         backgroundColor: ColorConstants.backgroundcolor,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => TrasactionHistory()),
+            );
           },
           icon: Icon(Icons.arrow_back),
         ),

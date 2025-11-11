@@ -4,10 +4,10 @@ import 'package:google_pay/global_widgets/globalcard.dart';
 import 'package:google_pay/global_widgets/globalcircleavatar.dart';
 import 'package:google_pay/global_widgets/globalcontainer.dart';
 import 'package:google_pay/global_widgets/globalisttile.dart';
-import 'package:google_pay/test.dart';
+
 import 'package:google_pay/view/home/bank%20transfer/bank_transfer_others.dart';
 import 'package:google_pay/view/home/electricity.dart';
-import 'package:google_pay/view/home/mobile_recharge.dart';
+import 'package:google_pay/my_recharge/mobile_recharge.dart';
 import 'package:google_pay/view/home/pay_anyone.dart';
 import 'package:google_pay/view/home/qr_code_scanning.dart';
 import 'package:google_pay/view/home/scanning_screen.dart';

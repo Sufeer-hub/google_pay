@@ -201,8 +201,8 @@ class _ProfileSceenState extends State<ProfileSceen> {
                   ),
                   SizedBox(height: 16),
                   Container(
-                    width: 340,
-                    height: 154,
+                    width: 360,
+                    height: 170,
                     decoration: BoxDecoration(color: Color(0xfff8f9fd)),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -247,7 +247,7 @@ class _ProfileSceenState extends State<ProfileSceen> {
 
                                 child: Container(
                                   width: 79,
-                                  height: 90,
+                                  height: 100,
 
                                   child: Column(
                                     children: [
@@ -272,6 +272,7 @@ class _ProfileSceenState extends State<ProfileSceen> {
                                           fontSize: 12,
                                           fontWeight: FontWeight.w500,
                                         ),
+                                        textAlign: TextAlign.center,
                                       ),
                                       Text(
                                         "1 account",
@@ -287,7 +288,7 @@ class _ProfileSceenState extends State<ProfileSceen> {
                               ),
                               Container(
                                 width: 100,
-                                height: 90,
+                                height: 100,
 
                                 child: Column(
                                   children: [
@@ -304,6 +305,7 @@ class _ProfileSceenState extends State<ProfileSceen> {
                                         fontSize: 12,
                                         fontWeight: FontWeight.w500,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                     Text(
                                       "Pay with UPI",

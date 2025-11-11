@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_pay/global_widgets/global_dateTime.dart';
-import 'package:google_pay/test.dart';
+import 'package:google_pay/my_recharge/recharge_paying_screen.dart';
 import 'package:google_pay/view/bottom%20navigation/bottom_nav.dart';
 import 'package:google_pay/view/home/bank%20transfer/bank_transfer_others.dart';
 import 'package:google_pay/view/home/bank%20transfer/bank_transfer_self.dart';
 import 'package:google_pay/view/home/electricity.dart';
-
 import 'package:google_pay/view/home/home_screen.dart';
 import 'package:google_pay/view/home/payments/payment_screen.dart';
 import 'package:google_pay/view/home/payments/payment_successfull.dart';
@@ -20,6 +19,7 @@ import 'package:google_pay/view/profile/payment_methods.dart';
 import 'package:google_pay/view/profile/profile_sceen.dart';
 import 'package:google_pay/view/profile/settings_screen.dart';
 import 'package:google_pay/view/profile/your_scanner.dart';
+import 'package:google_pay/view/sign_up/sign_up_screen1.dart';
 import 'package:google_pay/view/splash/splash_screen.dart';
 
 void main() {
@@ -31,6 +31,9 @@ class GooglePaySignUpApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: CheckBalance());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SignUpScreen1(),
+    );
   }
 }
