@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/global_widgets/globallisttile2.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -88,6 +89,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorConstants.backgroundcolor,
         automaticallyImplyLeading: false,
         actions: [
           PopupMenuButton(
@@ -176,7 +178,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ],
         ),
       ),
-      backgroundColor: Colors.grey[100],
+      backgroundColor: ColorConstants.backgroundcolor,
     );
   }
 }

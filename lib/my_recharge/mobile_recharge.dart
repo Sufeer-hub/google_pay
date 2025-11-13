@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/global_widgets/globallisttile2.dart';
 import 'package:google_pay/my_recharge/select_your_plan.dart';
+import 'package:google_pay/view/bottom%20navigation/bottom_nav.dart';
 import 'package:google_pay/view/home/home_screen.dart';
 
 class MobileRecharge extends StatefulWidget {
@@ -87,7 +88,7 @@ class _MobileRechargeState extends State<MobileRecharge> {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => BottomNavExample()),
             );
           },
           icon: Icon(Icons.arrow_back),

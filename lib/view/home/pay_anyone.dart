@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/global_widgets/globallisttile2.dart';
 
 class PayAnyone extends StatefulWidget {
@@ -88,6 +89,7 @@ class _PayAnyoneState extends State<PayAnyone> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorConstants.backgroundcolor,
         automaticallyImplyLeading: false,
         actions: [
           PopupMenuButton(
@@ -178,7 +180,7 @@ class _PayAnyoneState extends State<PayAnyone> {
           ],
         ),
       ),
-      backgroundColor: Colors.grey[100],
+      backgroundColor: ColorConstants.backgroundcolor,
     );
     ;
   }

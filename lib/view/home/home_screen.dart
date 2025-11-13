@@ -10,7 +10,7 @@ import 'package:google_pay/view/home/electricity.dart';
 import 'package:google_pay/my_recharge/mobile_recharge.dart';
 import 'package:google_pay/view/home/pay_anyone.dart';
 import 'package:google_pay/view/home/qr_code_scanning.dart';
-import 'package:google_pay/view/home/scanning_screen.dart';
+
 import 'package:google_pay/view/home/search_screen.dart';
 import 'package:google_pay/view/home/transaction/trasaction_history.dart';
 

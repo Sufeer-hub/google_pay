@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_pay/view/bottom%20navigation/bottom_nav.dart';
 import 'package:google_pay/view/home/home_screen.dart';
 import 'package:google_pay/view/home/payments/payment_screen.dart';
 import 'package:google_pay/view/profile/your_scanner.dart';
@@ -32,9 +33,9 @@ class _QRViewExampleState extends State<QRViewExample> {
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => BottomNavExample()),
             );
           },
           icon: Icon(Icons.clear, color: Colors.white),

@@ -88,7 +88,12 @@ class _SelectPlanState extends State<SelectPlan>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorConstants.backgroundcolor,
-        leading: Icon(Icons.arrow_back),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         title: Row(
           children: [
             CircleAvatar(

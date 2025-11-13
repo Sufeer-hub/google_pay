@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_pay/constants/color_constants/color_constants.dart';
 import 'package:google_pay/my_recharge/recharge_upi.dart';
+import 'package:google_pay/my_recharge/select_your_plan.dart';
 import 'package:google_pay/view/home/payments/upi_pin.dart';
 import 'package:google_pay/view/home/qr_code_scanning.dart';
 
@@ -15,13 +16,15 @@ class _RechargePaymentScreenState extends State<RechargePaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.backgroundcolor,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        backgroundColor: ColorConstants.backgroundcolor,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => QRViewExample()),
+              MaterialPageRoute(builder: (context) => SelectPlan()),
             );
           },
           icon: Icon(Icons.clear),

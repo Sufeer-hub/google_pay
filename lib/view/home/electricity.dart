@@ -151,6 +151,7 @@ class _ElectricityState extends State<Electricity> {
     return Scaffold(
       backgroundColor: ColorConstants.backgroundcolor,
       appBar: AppBar(
+        backgroundColor: ColorConstants.backgroundcolor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
